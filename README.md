@@ -6,83 +6,35 @@ This project analyzes the Netflix Movies & TV Shows dataset using Python librari
 
 📺 Movies vs. TV Shows – Bar chart comparing total number of movies and TV shows on Netflix.
 
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/8a834627-7371-4a5b-861b-09eb1d4c968e" />
+
 🎬 Content Ratings Distribution – Pie chart showing the percentage of different content ratings (TV-MA, PG, R, etc.).
+
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/7ad89a2c-69ab-4ae1-a429-746b07228fa5" />
 
 ⏱ Movie Duration Analysis – Histogram of movie durations to analyze common run times.
 
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/ea6f4bf0-a801-44ee-8c43-253ef329914b" />
+
 📅 Release Year Trend – Scatter plot showing how many shows were released per year.
+
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/11538673-485b-46e2-ac21-f01590f901d0" />
+
 
 🌍 Top Countries – Horizontal bar chart of the top 10 countries producing the most Netflix content.
 
-## 🛠 Tools & Libraries Used
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/554c5ba1-8e91-4e7c-b963-c05d2944d1e5" />
 
+## 🛠 Tools & Libraries Used
 Python 🐍
 Pandas (for data cleaning & manipulation)
 Matplotlib (for data visualization)
 
-#import the libraries
-import matplotlib.pyplot as plt
-import pandas as pd
+## 📈 Insights
 
-#load data
-df=pd.read_csv("netflix_titles.csv")
-
-#cleaning data
-df=df.dropna()
-
-type_counts=df["type"].value_counts()
-plt.figure()
-plt.bar(type_counts.index,type_counts.values,color=["skyblue","orange"])
-plt.title("Numbers of Movies VS TV Shows on Netflix")
-plt.xlabel("Type")
-plt.ylabel("Count")
-plt.tight_layout()
-plt.savefig("movies_vs_tvshows.png")
-plt.show()
-
-rating_counts=df["rating"].value_counts()
-plt.figure()
-plt.pie(rating_counts,labels=rating_counts.index,autopct="%1.2f%%")
-plt.title("Percentage of Content Ratings")
-plt.tight_layout()
-plt.savefig("ratings.png")
-plt.show()
-
-
-
-movie_df=df[df["type"]=="Movie"].copy()
-movie_df["duration_int"]=movie_df["duration"].str.replace("min"," ").astype(int)
-plt.figure()
-plt.hist(movie_df["duration_int"],bins=20,color="pink",edgecolor="black")
-plt.title("Distribution of Movie Duration")
-plt.xlabel("Duration")
-plt.ylabel("Movie")
-plt.tight_layout()
-plt.savefig("duration&movie.png")
-plt.show()
-
-
-release_counts=df["release_year"].value_counts().sort_index()
-plt.figure()
-plt.scatter(release_counts.index,release_counts.values,color="red")
-plt.title("Release Year VS Number of Shows")
-plt.xlabel("Release Year")
-plt.ylabel("Number of Shows")
-plt.tight_layout()
-plt.savefig("release_yer_scatter.png")
-plt.show()
-
-country_counts=df["country"].value_counts().head(10)
-plt.figure()
-plt.barh(country_counts.index,country_counts.values,color="green")
-plt.title("Top 10 Countries by Number of Shows")
-plt.xlabel("Number of Shows")
-plt.ylabel("Country")
-plt.tight_layout()
-plt.savefig("top10countries.png")
-plt.show()
-
-
-
-
+1. Distribution of movies vs TV shows
+2. Popular content ratings on Netflix
+3. Typical movie durations
+4. Trends in Netflix releases over the years
+5. Countries contributing most to Netflix’s content library
 
