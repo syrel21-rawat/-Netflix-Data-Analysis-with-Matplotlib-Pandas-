@@ -20,3 +20,6 @@ Python 🐍
 Pandas (for data cleaning & manipulation)
 Matplotlib (for data visualization)
 
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/f91b9e8f-a05b-4121-8a0f-dd554fa8af67" />
+
+
