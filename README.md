@@ -1,4 +1,4 @@
-#📊 Netflix Data Analysis with Matplotlib & Pandas
+📊 Netflix Data Analysis with Matplotlib & Pandas
 
 This project analyzes the Netflix Movies & TV Shows dataset using Python libraries like Pandas and Matplotlib to uncover trends and insights.
 
